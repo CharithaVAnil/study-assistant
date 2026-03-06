@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>Smart Study Assistant</title>
+<link rel="stylesheet" href="style.css">
+ </head>
+
+
+<body>
+<div class="container">
+<h1>Smart Study Assistant</h1>
+<h2>Add Study Task</h2>
+<label>Subject</label> <br> <input type="text" placeholder="Enter subject">
+<br><br>
+<label>Deadline</label> <br> <input type="date">
+<br><br>
+<label>Priority</label> <br> <select>
+<option>High</option>
+<option>Medium</option>
+<option>Low</option>
+</select>
+<br><br>
+<button onclick="addTask()">Add Task</button>
+<h2>Your Tasks</h2>
+<ul id="taskList"></ul>
+<button onclick="generateTimetable()">Generate Timetable</button>
+<div id="timetable"></div>
+<h2>Study Session Timer</h2>
+<button onclick="startStudySession()">Start Session</button>
+<h2 id="timer"></h2>
+
+ </div>
+<script src="app.js"></script>
+</body>
+</html>
+
+
