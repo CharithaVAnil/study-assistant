@@ -46,7 +46,7 @@ function startStudySession() {
 let time = 1500; // 25 minutes (1500 seconds)
 
 let timerDisplay = document.getElementById("timer");
-
+let progressBar = document.getElementById("progressBar");
 let timer = setInterval(function() {
 
 let minutes = Math.floor(time / 60);
@@ -55,7 +55,8 @@ let seconds = time % 60;
 timerDisplay.textContent = "Time Remaining: " + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 
 time--;
-
+progressBar.value = 1500 - time;
+    
 if (time < 0) {
 clearInterval(timer);
 timerDisplay.textContent = "Study Session Complete!";
@@ -75,3 +76,4 @@ window.onload = function() {
     });
 
 }
+
