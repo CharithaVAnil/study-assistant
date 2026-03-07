@@ -73,7 +73,7 @@ window.onload = function() {
         li.innerHTML = task;
         document.getElementById("taskList").appendChild(li);
     });
-
+updateTaskCount();
 }
 function updateTaskCount() {
     const tasks = document.querySelectorAll("#taskList li");
@@ -84,4 +84,5 @@ function deleteTask(button) {
     button.parentElement.remove();
     updateTaskCount();
 }
+
 
