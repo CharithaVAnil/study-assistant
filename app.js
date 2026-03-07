@@ -69,7 +69,7 @@ timerDisplay.textContent = "Study Session Complete!";
 
 }
 window.onload = function() {
-
+li.querySelector("input").setAttribute("onchange","toggleComplete(this)");
     let savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
     savedTasks.forEach(function(task){
@@ -105,6 +105,7 @@ function toggleComplete(checkbox) {
         document.getElementById("taskList").appendChild(li);
     }
 }
+
 
 
 
