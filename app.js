@@ -14,7 +14,7 @@ let taskList = document.getElementById("taskList");
 let li = document.createElement("li");
 
 li.className = priority.toLowerCase();
-li.innerHTML = "<input type='checkbox' onchange='this.parentElement.classList.toggle(\"completed\")'> " + subject + " | Deadline: " + deadline + " | Priority: " + priority + " <button onclick='deleteTask(this)'>Delete</button>";
+li.innerHTML = "<input type='checkbox' onchange='toggleComplete(this)'> " + subject + " | Deadline: " + deadline + " | Priority: " + priority + " <button onclick='deleteTask(this)'>Delete</button>";
 tasks.push(li.innerHTML);
 localStorage.setItem("tasks", JSON.stringify(tasks));
 
@@ -96,6 +96,7 @@ document.querySelector('input[type="text"]').addEventListener("keydown", functio
 function startFocusMode() {
     document.documentElement.requestFullscreen();
 }
+
 
 
 
