@@ -10,13 +10,12 @@ let taskList = document.getElementById("taskList");
 let li = document.createElement("li");
 
 li.className = priority.toLowerCase();
-li.innerHTML = "<input type='checkbox' onchange='this.parentElement.classList.toggle(\"completed\")'> " + subject + " | Deadline: " + deadline + " | Priority: " + priority + " <button onclick='this.parentElement.remove()'>Delete</button>";
-
+li.innerHTML = "<input type='checkbox' onchange='this.parentElement.classList.toggle(\"completed\")'> " + subject + " | Deadline: " + deadline + " | Priority: " + priority + " <button onclick='deleteTask(this)'>Delete</button>";
 tasks.push(li.innerHTML);
 localStorage.setItem("tasks", JSON.stringify(tasks));
 
 taskList.appendChild(li);
-
+updateTaskCount();
 document.querySelector('input[type="text"]').value = "";
 document.querySelector('input[type="date"]').value = "";
 document.querySelector('select').value = "High";
@@ -80,5 +79,9 @@ function updateTaskCount() {
     const tasks = document.querySelectorAll("#taskList li");
     document.getElementById("taskCount").textContent =
         "Total Tasks: " + tasks.length;
+}
+function deleteTask(button) {
+    button.parentElement.remove();
+    updateTaskCount();
 }
 
