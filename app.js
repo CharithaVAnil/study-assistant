@@ -89,6 +89,9 @@ document.addEventListener("keydown", function(event) {
         addTask();
     }
 });
+function startFocusMode() {
+    document.documentElement.requestFullscreen();
+}
 
 
 
