@@ -88,7 +88,7 @@ function deleteTask(button) {
     button.parentElement.remove();
     updateTaskCount();
 }
-document.addEventListener("keydown", function(event) {
+document.querySelector('input[type="text"]').addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
         addTask();
     }
@@ -96,6 +96,7 @@ document.addEventListener("keydown", function(event) {
 function startFocusMode() {
     document.documentElement.requestFullscreen();
 }
+
 
 
 
