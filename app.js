@@ -2,6 +2,10 @@ let tasks = [];
 function addTask() {
 
 let subject = document.querySelector('input[type="text"]').value;
+    if (subject.trim() === "") {
+    alert("Please enter a subject");
+    return;
+}
 let deadline = document.querySelector('input[type="date"]').value;
 let priority = document.querySelector('select').value;
 
@@ -92,6 +96,7 @@ document.addEventListener("keydown", function(event) {
 function startFocusMode() {
     document.documentElement.requestFullscreen();
 }
+
 
 
 
