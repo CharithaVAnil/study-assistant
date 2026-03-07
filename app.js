@@ -96,6 +96,15 @@ document.querySelector('input[type="text"]').addEventListener("keydown", functio
 function startFocusMode() {
     document.documentElement.requestFullscreen();
 }
+function toggleComplete(checkbox) {
+    let li = checkbox.parentElement;
+
+    li.classList.toggle("completed");
+
+    if (checkbox.checked) {
+        document.getElementById("taskList").appendChild(li);
+    }
+}
 
 
 
