@@ -76,4 +76,9 @@ window.onload = function() {
     });
 
 }
+function updateTaskCount() {
+    const tasks = document.querySelectorAll("#taskList li");
+    document.getElementById("taskCount").textContent =
+        "Total Tasks: " + tasks.length;
+}
 
