@@ -84,5 +84,10 @@ function deleteTask(button) {
     button.parentElement.remove();
     updateTaskCount();
 }
+document.querySelector('input[type="text"]').addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        addTask();
+    }
+});
 
 
